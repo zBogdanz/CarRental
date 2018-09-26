@@ -2,8 +2,8 @@ package ro.jademy.carrental;
 
 public class Car {
 
-    // Q: how can we better represent the car brand?
-    public String brand;
+    // Q: how can we better represent the car make?
+    public String make;
     public String model;
     public Integer year;
 
@@ -22,6 +22,9 @@ public class Car {
 
     // Q: how can we better represent the engine?
     public String engine;
+
+    // Q: how can we better represent money value?
+    public String basePrice;
 
     // Q: do we need a constructor other than the default one?
     // Q: how can we better protect the car data?

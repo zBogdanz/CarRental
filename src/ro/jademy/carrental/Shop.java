@@ -5,9 +5,14 @@ public class Shop {
 
     public boolean login(String username, String password) {
 
-        // TODO: implement a basic user login
+        String user = "Bogdan";
+        String pass = "carpass";
+        if (user.equals (username)&& pass.equals (password)){
+            return true;
+        }else {
 
-        return false;
+            return false;
+        }
     }
 
     public void showMenu() {
@@ -45,5 +50,10 @@ public class Shop {
         //       weekdays and national holidays in which the discount should be smaller
 
         // Q: what should be the return type of this method?
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        return super.equals (obj);
     }
 }

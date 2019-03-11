@@ -1,8 +1,8 @@
-package ro.jademy.carrental;
+package ro.jademy.carrental.car;
 
 import java.util.Objects;
 
-public class Car {
+public abstract class Car {
 
     // Q: how can we better represent the car make?
     public String make;
@@ -30,6 +30,7 @@ public class Car {
 
     // Q: do we need a constructor other than the default one?
     // Q: how can we better protect the car data?
+    private boolean available;
 
 
     public Car(String make, String model, Integer year, CarType carType, FuelType fuelType, Integer doorNumber, String color, TransmissionType transmissionType, Engine engine, Integer basePrice) {
@@ -43,6 +44,7 @@ public class Car {
         this.transmissionType = transmissionType;
         this.engine = engine;
         this.basePrice = basePrice;
+        this.available = true;
     }
 
     public String getMake() {
@@ -69,6 +71,14 @@ public class Car {
         return basePrice;
     }
 
+    public boolean isAvailable() {
+        return available;
+    }
+
+    public void setAvailable(boolean available) {
+        this.available = available;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -93,17 +103,16 @@ public class Car {
 
     @Override
     public String toString() {
-        return "Car{" +
-                "make='" + make + '\'' +
-                ", model='" + model + '\'' +
-                ", year=" + year +
-                ", carType=" + carType +
-                ", fuelType=" + fuelType +
-                ", doorNumber=" + doorNumber +
-                ", color='" + color + '\'' +
-                ", transmissionType=" + transmissionType +
-                ", engine=" + engine +
-                ", basePrice='" + basePrice + '\'' +
-                '}';
+        return "Car " +
+                "make=" + make +
+                " model=" + model +
+                " year=" + year +
+                " carType=" + carType +
+                " fuelType=" + fuelType +
+                " doorNumber=" + doorNumber +
+                " color=" + color +
+                " transmission=" + transmissionType +" "+
+                  engine +
+                " basePrice=" + basePrice;
     }
 }
